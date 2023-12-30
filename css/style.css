@@ -1,0 +1,170 @@
+@font-face {
+  font-family: "Crang";
+  src: url(../font/Crang.ttf);
+}
+@font-face {
+  font-family: "GODOFWAR";
+  src: url(../font/GODOFWAR.TTF);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../background.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.component {
+  text-align: center;
+}
+.component h1 {
+  color: #FBFBFB;
+  font-size: 2.5rem;
+  text-align: center;
+  font-family: "GODOFWAR", sans-serif;
+}
+.component .colorInput {
+  margin: 1.5rem 0px;
+  background: transparent;
+  border: none;
+  width: 350px;
+  height: 65px;
+  border-radius: 60px;
+}
+.component .colorInput::-webkit-color-swatch {
+  border-radius: 50px;
+  box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
+  padding: 0;
+}
+.component .btn {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  justify-items: center;
+}
+.component .btn button {
+  width: 200px;
+  height: 50px;
+  margin: 15px 0px;
+  padding: 0px 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
+  color: #262526;
+  font-size: 1.5rem;
+  font-family: "GODOFWAR", sans-serif;
+  transition: 0.3s all ease;
+}
+.component .btn button:hover {
+  background-color: rgba(255, 255, 255, 0.8274509804);
+}
+.component .btn button.active {
+  background-color: transparent;
+  color: #FBFBFB;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.display .container {
+  width: 500px;
+  height: 500px;
+  border: 4px solid #E7D4DA;
+  border-radius: 10px;
+  margin: 20px 50px;
+  display: grid;
+  background: #ffffff;
+}
+.display .size {
+  text-align: center;
+}
+.display .size input {
+  -webkit-appearance: none;
+  width: 300px;
+  background-color: #FBFBFB;
+  border-radius: 25px;
+  height: 10px;
+}
+.display .size input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  margin-top: -2px;
+  background: #1465bb;
+}
+.display .size p {
+  font-size: 1.3rem;
+  color: #FBFBFB;
+  font-family: "GODOFWAR", sans-serif;
+}
+
+@media (max-width: 379px) {
+  body {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .component {
+    text-align: center;
+  }
+  .component h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  .component .colorInput {
+    margin: 1rem 0px;
+    width: 250px;
+    height: 60px;
+  }
+  .component .colorInput::-webkit-color-swatch {
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 1px;
+  }
+  .component .btn {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  .component .btn button {
+    width: 160px;
+    height: 50px;
+    margin: 5px 10px;
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
+    font-size: 1.5rem;
+  }
+  .display .container {
+    width: 330px;
+    height: 330px;
+    border-width: 5px;
+    margin: 20px 50px;
+  }
+  .display .size input {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 10px;
+  }
+  .display .size input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-top: -2px;
+  }
+  .display .size p {
+    font-size: 1.2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

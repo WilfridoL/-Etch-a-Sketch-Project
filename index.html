@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKETCH PROJECT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="component">
+    <h1>SKETCH PROJECT</h1>
+    <input class="colorInput" type="color" id="color">
+    <div class="btn">
+      <button class="active" id="btnColor">Color</button>
+      <button id="randomColor">Random Color</button>
+      <button id="btnEraser"> Eraser</button>
+      <button id="cls"> Clear</button>
+    </div>
+  </div>
+  <div class="display">
+    <div class="container"></div>
+    <div class="size">
+      <p class="sizeValue">16 x 16</p>
+      <input type="range" min="2" max="64" value="16" id="sizeSlider">
+    </div>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
