@@ -8,157 +8,447 @@
 body {
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: url(../background.jpg) no-repeat center;
   background-size: cover;
 }
 
-.component {
-  text-align: center;
-  h1{
-    color: var.$text;
-    font-size: 2.5rem;
-    text-align: center;
-    font-family: 'GODOFWAR', sans-serif;
-  }
-  .colorInput{
-    margin: 1.5rem 0px;
-    background: transparent;
-    border: none;
-    width: 350px;
-    height: 65px;
-    border-radius: 60px;
-  }
-  .colorInput::-webkit-color-swatch {
-    border-radius: 50px;
-    box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
-    padding: 0;
-  }
-  .btn{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    justify-items: center;
-    button{
-      width: 200px;
-      height: 50px;
-      margin: 15px 0px;
-      padding: 0px 5px;
-      border-radius: 10px;
-      border: none;
-      background-color: var.$buttonBck;
-      box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
-      color: var.$buttonText;
-      font-size: 1.5rem;
-      font-family: 'GODOFWAR', sans-serif;
-      transition: .3s all ease;
-    }button:hover{
-      background-color: var.$buttonBckHover;
-    }
-    button.active{
-      background-color: var.$buttonBckActive;
-      color: var.$text;
-    }
-  }
-}
-
-.display{
+.principalContainer{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  .container {
-    width: 500px;
-    height: 500px;
-    border: 4px solid #E7D4DA;
-    border-radius: 10px;
-    margin: 20px 50px;
-    display: grid;
-    background: var.$buttonBck;
-  }
-  .size{
-    text-align: center;
-    input{
-      // -webkit-appearance: none;
-      width: 300px;
-      background-color: var.$text;
-      border-radius: 25px;
-      height: 10px;
-    }
-    input::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;      
-      border-radius: 25px;
-      margin-top: -2px;
-      background: #1465bb;
-    }
-    p{
-      font-size: 1.3rem;
-      color: var.$text;
-      font-family: 'GODOFWAR', sans-serif;
-    }
-  }
-}
-@media (max-width:379px){
-  body {
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-  }
-  
   .component {
     text-align: center;
     h1{
-      font-size: 2rem;
-      margin-top: 20px;
+      color: var.$text;
+      font-size: 2.5rem;
+      text-align: center;
+      font-family: 'GODOFWAR', sans-serif;
     }
     .colorInput{
-      margin: 1rem 0px;
-      width: 250px;
-      height: 60px;
+      margin: 1.5rem 0px;
+      background: transparent;
+      border: none;
+      width: 350px;
+      height: 65px;
+      border-radius: 60px;
     }
     .colorInput::-webkit-color-swatch {
-      box-shadow: var.$borderShadowButton 0px 0px 4px 1px;
+      border-radius: 50px;
+      box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
+      padding: 0;
     }
     .btn{
-      grid-template-columns: repeat(2, 1fr);
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(1, 1fr);
+      justify-items: center;
       button{
-        width: 160px;
+        width: 200px;
         height: 50px;
-        margin: 5px 10px;
+        margin: 15px 0px;
+        padding: 0px 5px;
+        border-radius: 10px;
+        border: none;
+        background-color: var.$buttonBck;
         box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
+        color: var.$buttonText;
         font-size: 1.5rem;
+        font-family: 'GODOFWAR', sans-serif;
+        transition: .3s all ease;
+      }button:hover{
+        background-color: var.$buttonBckHover;
+      }
+      button.active{
+        background-color: var.$buttonBckActive;
+        color: var.$text;
       }
     }
   }
   
   .display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     .container {
-      width: 330px;
-      height: 330px;
-      border-width: 5px;
+      width: 500px;
+      height: 500px;
+      border: 4px solid #E7D4DA;
+      border-radius: 10px;
       margin: 20px 50px;
+      display: grid;
+      background: var.$buttonBck;
     }
     .size{
+      text-align: center;
       input{
-        // -webkit-appearance: none;
+        appearance: none;
         width: 300px;
+        background-color: var.$text;
+        border-radius: 25px;
         height: 10px;
       }
       input::-webkit-slider-thumb {
-        -webkit-appearance: none;
+        appearance: none;
         width: 20px;
-        height: 20px;
+        height: 20px;      
+        border-radius: 25px;
         margin-top: -2px;
+        background: #1465bb;
       }
       p{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        color: var.$text;
+        font-family: 'GODOFWAR', sans-serif;
+      }
+    }
+  }
+}
+// mobile version
+@media (max-width:350px){
+  body {
+    height: auto;
+  }
+  
+  .principalContainer{
+    flex-direction: column;
+    .component {
+      text-align: center;
+      h1{
+        font-size: 1.85rem;
+        margin-top: 20px;
+      }
+      .colorInput{
+        margin: 1rem 0px;
+        width: 250px;
+        height: 60px;
+      }
+      .colorInput::-webkit-color-swatch {
+        box-shadow: var.$borderShadowButton 0px 0px 4px 1px;
+      }
+      .btn{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        // padding: 0px 50px;
+        button{
+          width: 130px;
+          height: 50px;
+          margin: 5px 0px;
+          box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    
+    .display{
+      .container {
+        width: 285px;
+        height: 285px;
+        border-width: 5px;
+        margin: 20px 50px;
+      }
+      .size{
+        padding-bottom: 2.5rem;
+        input{
+          appearance: none;
+          width: 300px;
+          height: 10px;
+        }
+        input::-webkit-slider-thumb {
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          margin-top: -2px;
+        }
+        p{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width:351px) and (max-width:599px){
+  body {
+    height: 105vh;
+  }
+  
+  .principalContainer{
+    flex-direction: column;
+    .component {
+      text-align: center;
+      h1{
+        font-size: 2.2rem;
+        margin-top: 20px;
+      }
+      .colorInput{
+        margin: 1rem 0px;
+        width: 250px;
+        height: 60px;
+      }
+      .colorInput::-webkit-color-swatch {
+        box-shadow: var.$borderShadowButton 0px 0px 4px 1px;
+      }
+      .btn{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        button{
+          width: 160px;
+          height: 50px;
+          margin: 5px 0px;
+          box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    
+    .display{
+      .container {
+        width: 300px;
+        height: 300px;
+        border-width: 5px;
+        margin: 20px 50px;
+      }
+      .size{
+        // padding-bottom: 2.5rem;
+        input{
+          appearance: none;
+          width: 300px;
+          height: 10px;
+        }
+        input::-webkit-slider-thumb {
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          margin-top: -2px;
+        }
+        p{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+// tablet version
+@media (min-width:600px) and (max-width:767px){
+  body {
+    height: 150vh;
+  }
+  
+  .principalContainer{
+    flex-direction: column;
+    .component {
+      text-align: center;
+      h1{
+        font-size: 3.5rem;
+        margin-top: 20px;
+      }
+      .colorInput{
+        margin: 1rem 0px;
+        width: 400px;
+        height: 60px;
+      }
+      .colorInput::-webkit-color-swatch {
+        box-shadow: var.$borderShadowButton 0px 0px 4px 1px;
+      }
+      .btn{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        button{
+          width: 280px;
+          height: 50px;
+          margin: 5px 5px;
+          box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
+          font-size: 2rem;
+        }
+      }
+    }
+    
+    .display{
+      .container {
+        width: 450px;
+        height: 450px;
+        border-width: 6px;
+        margin: 20px 50px;
+      }
+      .size{
+        input{
+          appearance: none;
+          width: 400px;
+          height: 15px;
+        }
+        input::-webkit-slider-thumb {
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          margin-top: -2px;
+        }
+        p{
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width:768px) and (max-width:1024px){
+  body {
+    height: 110vh;
+  }
+  
+  .principalContainer{
+    flex-direction: column;
+    .component {
+      text-align: center;
+      h1{
+        font-size: 4rem;
+        margin-top: 20px;
+      }
+      .colorInput{
+        margin: 1rem 0px;
+        width: 500px;
+        height: 70px;
+      }
+      .colorInput::-webkit-color-swatch {
+        box-shadow: var.$borderShadowButton 0px 0px 4px 1px;
+      }
+      .btn{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        text-align: center;
+        
+        button{
+          width: 230px;
+          height: 80px;
+          margin: 5px 5px;
+          box-shadow: var.$borderShadowButton 0px 0px 4px 2px;
+          font-size: 2rem;
+        }
+        button:nth-child(4){
+          grid-column-start: 2;
+        }
+      }
+    }
+    
+    .display{
+      .container {
+        width: 550px;
+        height: 550px;
+        border-width: 6px;
+        margin: 20px 50px;
+      }
+      .size{
+        input{
+          appearance: none;
+          width: 500px;
+          height: 18px;
+        }
+        input::-webkit-slider-thumb {
+          appearance: none;
+          width: 30px;
+          height: 30px;
+          margin-top: -2px;
+        }
+        p{
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+// desktop version
+@media (min-width:1440px) and (max-width:1919px){
+  .principalContainer{
+    .component {
+      h1{
+        font-size: 3.4rem;
+      }
+      .colorInput{
+        margin: 1.5rem 0px;
+        width: 400px;
+        height: 65px;
+      }
+      .btn{
+        button{
+          width: 250px;
+          height: 50px;
+          margin: 15px 0px;
+          padding: 0px 5px;
+          font-size: 1.8rem;
+        }
+      }
+    }
+    
+    .display{
+      .container {
+        width: 600px;
+        height: 600px;
+        margin: 15px 50px;
+      }
+      .size{
+        input{
+          appearance: none;
+          width: 400px;
+          border-radius: 25px;
+          height: 10px;
+        }
+        input::-webkit-slider-thumb {
+          appearance: none;
+          width: 20px;
+          height: 20px;      
+          border-radius: 25px;
+          margin-top: -2px;
+        }
+        p{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width:1920px){
+  .principalContainer{
+    .component {
+      h1{
+        font-size: 4rem;
+      }
+      .colorInput{
+        margin: 1.5rem 0px;
+        width: 500px;
+        height: 70px;
+      }
+      .btn{
+        button{
+          width: 300px;
+          height: 70px;
+          margin: 15px 0px;
+          padding: 0px 5px;
+          font-size: 2.2rem;
+        }
+      }
+    }
+    
+    .display{
+      .container {
+        width: 820px;
+        height: 820px;
+        margin: 30px 50px 10px 50px;
+      }
+      .size{
+        input{
+          appearance: none;
+          width: 500px;
+          border-radius: 25px;
+          height: 20px;
+        }
+        input::-webkit-slider-thumb {
+          appearance: none;
+          width: 35px;
+          height: 35px;      
+          border-radius: 25px;
+          margin-top: -2px;
+        }
+        p{
+          font-size: 2.1rem;
+        }
       }
     }
   }

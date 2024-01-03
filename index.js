@@ -27,21 +27,28 @@ function setCurrentColorValue(newSize) {
   currentColor = newSize
 }
 
+function setCurrentModeValue(mode) {
+  btnActive(mode)
+  currentMode = mode;
+}
+
 colorValue.oninput = (e) => setCurrentColorValue(e.target.value);
 sizeValue.onmousemove = (e) => updeteParameters(e.target.value);
 sizeValue.onchange = (e) => updeteSize(e.target.value);
 
 // DOM buttons
 btnColor.addEventListener('click', () => {
-  currentMode = 'color';
+  setCurrentModeValue('color')
+
 });
 
 btnRandom.addEventListener('click', () => {
-  currentMode = 'random';
+  setCurrentModeValue('random')
 });
 
 btnEraser.addEventListener('click', () => {
-  currentMode = 'eraser';
+  setCurrentModeValue('eraser')
+
 });
 
 btnCls.addEventListener('click', () => {
@@ -78,7 +85,12 @@ function createGrid(size) {
   }
 }
 
+let mouseActive = false;
+document.body.onmousedown = () => {mouseActive = true}
+document.body.onmouseup = () => {mouseActive = false}
+
 function updateColor(e) {
+  if(e.type === 'mouseover' && !mouseActive) return
   if (currentMode === 'color') {
     e.target.style.background = currentColor;
   } if (currentMode === 'random') {
@@ -88,6 +100,23 @@ function updateColor(e) {
     e.target.style.background = `rgb(${randomR},${randomG},${randomB})`
   } if (currentMode === 'eraser') {
     e.target.style.background = 'transparent';
+  }
+}
+
+function btnActive(mode) {
+  if(currentMode === 'color'){
+    btnColor.classList.remove('active');
+  }else if(currentMode === 'random'){
+    btnRandom.classList.remove('active');
+  }else if(currentMode === 'eraser'){
+    btnEraser.classList.remove('active');
+  }
+  if(mode === 'color'){
+    btnColor.classList.add('active');
+  }else if(mode === 'random'){
+    btnRandom.classList.add('active');
+  }else if(mode === 'eraser'){
+    btnEraser.classList.add('active');
   }
 }
 

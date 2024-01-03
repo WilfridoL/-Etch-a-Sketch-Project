@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <div class="component">
+  <div class="principalContainer">
+    <div class="component">
     <h1>SKETCH PROJECT</h1>
-    <input class="colorInput" type="color" id="color">
+    <div class="color"><input class="colorInput" type="color" id="color"></div>
     <div class="btn">
       <button class="active" id="btnColor">Color</button>
       <button id="randomColor">Random Color</button>
@@ -25,6 +26,7 @@
       <p class="sizeValue">16 x 16</p>
       <input type="range" min="2" max="64" value="16" id="sizeSlider">
     </div>
+  </div>
   </div>
   <script type="module" src="index.js"></script>
 </body>

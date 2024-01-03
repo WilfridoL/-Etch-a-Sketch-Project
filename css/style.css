@@ -1,8 +1,4 @@
 @font-face {
-  font-family: "Crang";
-  src: url(../font/Crang.ttf);
-}
-@font-face {
   font-family: "GODOFWAR";
   src: url(../font/GODOFWAR.TTF);
 }
@@ -15,23 +11,25 @@
 body {
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: url(../background.jpg) no-repeat center;
   background-size: cover;
 }
 
-.component {
+.principalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.principalContainer .component {
   text-align: center;
 }
-.component h1 {
+.principalContainer .component h1 {
   color: #FBFBFB;
   font-size: 2.5rem;
   text-align: center;
   font-family: "GODOFWAR", sans-serif;
 }
-.component .colorInput {
+.principalContainer .component .colorInput {
   margin: 1.5rem 0px;
   background: transparent;
   border: none;
@@ -39,18 +37,18 @@ body {
   height: 65px;
   border-radius: 60px;
 }
-.component .colorInput::-webkit-color-swatch {
+.principalContainer .component .colorInput::-webkit-color-swatch {
   border-radius: 50px;
   box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
   padding: 0;
 }
-.component .btn {
+.principalContainer .component .btn {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
   justify-items: center;
 }
-.component .btn button {
+.principalContainer .component .btn button {
   width: 200px;
   height: 50px;
   margin: 15px 0px;
@@ -64,21 +62,20 @@ body {
   font-family: "GODOFWAR", sans-serif;
   transition: 0.3s all ease;
 }
-.component .btn button:hover {
+.principalContainer .component .btn button:hover {
   background-color: rgba(255, 255, 255, 0.8274509804);
 }
-.component .btn button.active {
+.principalContainer .component .btn button.active {
   background-color: transparent;
   color: #FBFBFB;
 }
-
-.display {
+.principalContainer .display {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.display .container {
+.principalContainer .display .container {
   width: 500px;
   height: 500px;
   border: 4px solid #E7D4DA;
@@ -87,83 +84,327 @@ body {
   display: grid;
   background: #ffffff;
 }
-.display .size {
+.principalContainer .display .size {
   text-align: center;
 }
-.display .size input {
-  -webkit-appearance: none;
+.principalContainer .display .size input {
+  appearance: none;
   width: 300px;
   background-color: #FBFBFB;
   border-radius: 25px;
   height: 10px;
 }
-.display .size input::-webkit-slider-thumb {
-  -webkit-appearance: none;
+.principalContainer .display .size input::-webkit-slider-thumb {
+  appearance: none;
   width: 20px;
   height: 20px;
   border-radius: 25px;
   margin-top: -2px;
   background: #1465bb;
 }
-.display .size p {
+.principalContainer .display .size p {
   font-size: 1.3rem;
   color: #FBFBFB;
   font-family: "GODOFWAR", sans-serif;
 }
 
-@media (max-width: 379px) {
+@media (max-width: 350px) {
   body {
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+    height: auto;
   }
-  .component {
+  .principalContainer {
+    flex-direction: column;
+  }
+  .principalContainer .component {
     text-align: center;
   }
-  .component h1 {
-    font-size: 2rem;
+  .principalContainer .component h1 {
+    font-size: 1.85rem;
     margin-top: 20px;
   }
-  .component .colorInput {
+  .principalContainer .component .colorInput {
     margin: 1rem 0px;
     width: 250px;
     height: 60px;
   }
-  .component .colorInput::-webkit-color-swatch {
+  .principalContainer .component .colorInput::-webkit-color-swatch {
     box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 1px;
   }
-  .component .btn {
+  .principalContainer .component .btn {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
   }
-  .component .btn button {
-    width: 160px;
+  .principalContainer .component .btn button {
+    width: 130px;
     height: 50px;
-    margin: 5px 10px;
+    margin: 5px 0px;
     box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
-  .display .container {
-    width: 330px;
-    height: 330px;
+  .principalContainer .display .container {
+    width: 285px;
+    height: 285px;
     border-width: 5px;
     margin: 20px 50px;
   }
-  .display .size input {
-    -webkit-appearance: none;
+  .principalContainer .display .size {
+    padding-bottom: 2.5rem;
+  }
+  .principalContainer .display .size input {
+    appearance: none;
     width: 300px;
     height: 10px;
   }
-  .display .size input::-webkit-slider-thumb {
-    -webkit-appearance: none;
+  .principalContainer .display .size input::-webkit-slider-thumb {
+    appearance: none;
     width: 20px;
     height: 20px;
     margin-top: -2px;
   }
-  .display .size p {
-    font-size: 1.2rem;
+  .principalContainer .display .size p {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 351px) and (max-width: 599px) {
+  body {
+    height: 105vh;
+  }
+  .principalContainer {
+    flex-direction: column;
+  }
+  .principalContainer .component {
+    text-align: center;
+  }
+  .principalContainer .component h1 {
+    font-size: 2.2rem;
+    margin-top: 20px;
+  }
+  .principalContainer .component .colorInput {
+    margin: 1rem 0px;
+    width: 250px;
+    height: 60px;
+  }
+  .principalContainer .component .colorInput::-webkit-color-swatch {
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 1px;
+  }
+  .principalContainer .component .btn {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  .principalContainer .component .btn button {
+    width: 160px;
+    height: 50px;
+    margin: 5px 0px;
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
+    font-size: 1.5rem;
+  }
+  .principalContainer .display .container {
+    width: 300px;
+    height: 300px;
+    border-width: 5px;
+    margin: 20px 50px;
+  }
+  .principalContainer .display .size input {
+    appearance: none;
+    width: 300px;
+    height: 10px;
+  }
+  .principalContainer .display .size input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-top: -2px;
+  }
+  .principalContainer .display .size p {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 600px) and (max-width: 767px) {
+  body {
+    height: 150vh;
+  }
+  .principalContainer {
+    flex-direction: column;
+  }
+  .principalContainer .component {
+    text-align: center;
+  }
+  .principalContainer .component h1 {
+    font-size: 3.5rem;
+    margin-top: 20px;
+  }
+  .principalContainer .component .colorInput {
+    margin: 1rem 0px;
+    width: 400px;
+    height: 60px;
+  }
+  .principalContainer .component .colorInput::-webkit-color-swatch {
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 1px;
+  }
+  .principalContainer .component .btn {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  .principalContainer .component .btn button {
+    width: 280px;
+    height: 50px;
+    margin: 5px 5px;
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
+    font-size: 2rem;
+  }
+  .principalContainer .display .container {
+    width: 450px;
+    height: 450px;
+    border-width: 6px;
+    margin: 20px 50px;
+  }
+  .principalContainer .display .size input {
+    appearance: none;
+    width: 400px;
+    height: 15px;
+  }
+  .principalContainer .display .size input::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    margin-top: -2px;
+  }
+  .principalContainer .display .size p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    height: 110vh;
+  }
+  .principalContainer {
+    flex-direction: column;
+  }
+  .principalContainer .component {
+    text-align: center;
+  }
+  .principalContainer .component h1 {
+    font-size: 4rem;
+    margin-top: 20px;
+  }
+  .principalContainer .component .colorInput {
+    margin: 1rem 0px;
+    width: 500px;
+    height: 70px;
+  }
+  .principalContainer .component .colorInput::-webkit-color-swatch {
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 1px;
+  }
+  .principalContainer .component .btn {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+  }
+  .principalContainer .component .btn button {
+    width: 230px;
+    height: 80px;
+    margin: 5px 5px;
+    box-shadow: rgba(37, 43, 119, 0.7137254902) 0px 0px 4px 2px;
+    font-size: 2rem;
+  }
+  .principalContainer .component .btn button:nth-child(4) {
+    grid-column-start: 2;
+  }
+  .principalContainer .display .container {
+    width: 550px;
+    height: 550px;
+    border-width: 6px;
+    margin: 20px 50px;
+  }
+  .principalContainer .display .size input {
+    appearance: none;
+    width: 500px;
+    height: 18px;
+  }
+  .principalContainer .display .size input::-webkit-slider-thumb {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    margin-top: -2px;
+  }
+  .principalContainer .display .size p {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .principalContainer .component h1 {
+    font-size: 3.4rem;
+  }
+  .principalContainer .component .colorInput {
+    margin: 1.5rem 0px;
+    width: 400px;
+    height: 65px;
+  }
+  .principalContainer .component .btn button {
+    width: 250px;
+    height: 50px;
+    margin: 15px 0px;
+    padding: 0px 5px;
+    font-size: 1.8rem;
+  }
+  .principalContainer .display .container {
+    width: 600px;
+    height: 600px;
+    margin: 15px 50px;
+  }
+  .principalContainer .display .size input {
+    appearance: none;
+    width: 400px;
+    border-radius: 25px;
+    height: 10px;
+  }
+  .principalContainer .display .size input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    margin-top: -2px;
+  }
+  .principalContainer .display .size p {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .principalContainer .component h1 {
+    font-size: 4rem;
+  }
+  .principalContainer .component .colorInput {
+    margin: 1.5rem 0px;
+    width: 500px;
+    height: 70px;
+  }
+  .principalContainer .component .btn button {
+    width: 300px;
+    height: 70px;
+    margin: 15px 0px;
+    padding: 0px 5px;
+    font-size: 2.2rem;
+  }
+  .principalContainer .display .container {
+    width: 820px;
+    height: 820px;
+    margin: 30px 50px 10px 50px;
+  }
+  .principalContainer .display .size input {
+    appearance: none;
+    width: 500px;
+    border-radius: 25px;
+    height: 20px;
+  }
+  .principalContainer .display .size input::-webkit-slider-thumb {
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 25px;
+    margin-top: -2px;
+  }
+  .principalContainer .display .size p {
+    font-size: 2.1rem;
   }
 }
 
